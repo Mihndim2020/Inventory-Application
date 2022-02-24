@@ -1,41 +1,41 @@
 var Item = require('../models/item');
 
-// Display list of all books.
-exports.book_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book list');
+// Display list of all items.
+exports.item_list = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item list');
 };
 
-// Display detail page for a specific book.
-exports.book_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book detail: ' + req.params.id);
+// Display detail page for a specific item.
+exports.item_detail = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item detail: ' + req.params.id);
 };
 
-// Display book create form on GET.
-exports.book_create_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book create GET');
+// Display item create form on GET.
+exports.item_create_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item create GET');
 };
 
-// Handle book create on POST.
-exports.book_create_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book create POST');
+// Handle item create on POST.
+exports.item_create_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item create POST');
 };
 
-// Display book delete form on GET.
-exports.book_delete_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book delete GET');
+// Display item delete form on GET.
+exports.item_delete_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item delete GET');
 };
 
-// Handle book delete on POST.
-exports.book_delete_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book delete POST');
+// Handle item delete on POST.
+exports.item_delete_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item delete POST');
 };
 
-// Display book update form on GET.
-exports.book_update_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book update GET');
+// Display item update form on GET.
+exports.item_update_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item update GET');
 };
 
-// Handle book update on POST.
-exports.book_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book update POST');
+// Handle item update on POST.
+exports.item_update_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Item update POST');
 };
