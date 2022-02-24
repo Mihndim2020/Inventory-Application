@@ -72,25 +72,25 @@ function itemCreate(name, tradeMark, category, price, numberInStock, speed, capa
 function createItemsCategories(cb) {
     async.series([
         function(callback) {
-          categoryCreate('Input devices', 'This are devices that help us to input data or information into the Computer', callback);
+          categoryCreate("Input devices", "This are devices that help us to input data or information into the Computer", callback);
         },
         function(callback) {
-          categoryCreate('Output devices', 'These are devices that help us to display the results of a computer computation', callback);
+          categoryCreate("Output devices", "These are devices that help us to display the results of a computer computation", callback);
         },
         function(callback) {
-          categoryCreate('Network devices', 'These are devices that help us to connect and share information between computing devices', callback);
+          categoryCreate("Network devices", "These are devices that help us to connect and share information between computing devices", callback);
         },
         function(callback) {
-          categoryCreate('Circuit boards', 'This acts like information highways between components in the computer', callback);
+          categoryCreate("Circuit boards", "This acts like information highways between components in the computer", callback);
         },
         function(callback) {
-          categoryCreate('Storage devices', 'These are devices that store or hold information temporary of permanently', callback);
+          categoryCreate("Storage devices", "These are devices that store or hold information temporary of permanently", callback);
         },
         function(callback) {
-          categoryCreate('Processing', 'This are devices that process data to produce information', callback);
+          categoryCreate("Processing", "This are devices that process data to produce information", callback);
         },
         function(callback) {
-          categoryCreate('Accesories', 'These are devices that extend the functionalities of computers', callback);
+          categoryCreate("Accesories", "These are devices that extend the functionalities of computers", callback);
         }
         ],
         // optional callback
@@ -101,7 +101,7 @@ function createItemsCategories(cb) {
 function createItems(cb) {
     async.parallel([
         function(callback) {
-          itemCreate("monitor", "dell", "Output devices", 45, 23, false, false, false, false, callback);
+          itemCreate("monitor", "dell", "Acessories", 45, 23, false, false, false, false, callback);
         },
         function(callback) {
           itemCreate("sata hdd", "digital ocean", "Storage devices", 45, 89, 203, 250, false, false, callback);
