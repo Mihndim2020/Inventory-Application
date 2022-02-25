@@ -36,29 +36,26 @@ router.get('/categories', category_controller.category_list);
 
 /// ITEM ROUTES ///
 
-// GET catalog home page.
-router.get('/', book_controller.index);
+// GET request for creating a Item. NOTE This must come before routes that display Item (uses id).
+router.get('/book/create', item_controller.item_create_get);
 
-// GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
-router.get('/book/create', book_controller.book_create_get);
+// POST request for creating Item.
+router.post('/book/create', item_controller.item_create_post);
 
-// POST request for creating Book.
-router.post('/book/create', book_controller.book_create_post);
+// GET request to delete Item.
+router.get('/book/:id/delete', item_controller.item_delete_get);
 
-// GET request to delete Book.
-router.get('/book/:id/delete', book_controller.book_delete_get);
+// POST request to delete Item.
+router.post('/book/:id/delete', item_controller.item_delete_post);
 
-// POST request to delete Book.
-router.post('/book/:id/delete', book_controller.book_delete_post);
+// GET request to update Item.
+router.get('/book/:id/update', item_controller.item_update_get);
 
-// GET request to update Book.
-router.get('/book/:id/update', book_controller.book_update_get);
+// POST request to update Item.
+router.post('/book/:id/update', item_controller.item_update_post);
 
-// POST request to update Book.
-router.post('/book/:id/update', book_controller.book_update_post);
+// GET request for one Item.
+router.get('/book/:id', item_controller.item_detail);
 
-// GET request for one Book.
-router.get('/book/:id', book_controller.book_detail);
-
-// GET request for list of all Book items.
-router.get('/books', book_controller.book_list);
+// GET request for list of all Items.
+router.get('/books', item_controller.item_list);
