@@ -10,7 +10,7 @@ exports.category_list = function(req, res) {
 };
 
 // Display detail page for a specific Category.
-exports.categoty_detail = function(req, res) {
+exports.category_detail = function(req, res) {
     res.send('NOT IMPLEMENTED: Category detail: ' + req.params.id);
 };
 
