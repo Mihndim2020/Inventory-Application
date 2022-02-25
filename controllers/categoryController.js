@@ -40,6 +40,6 @@ exports.category_update_get = function(req, res) {
 };
 
 // Handle Category update on POST.
-exports.author_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Author update POST');
+exports.category_update_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Category update POST');
 };
