@@ -59,3 +59,5 @@ router.get('/book/:id', item_controller.item_detail);
 
 // GET request for list of all Items.
 router.get('/books', item_controller.item_list);
+
+module.exports = router;
