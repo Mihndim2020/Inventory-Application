@@ -1,5 +1,5 @@
 var Category = require('../models/category');
-var Item = require('./models/item');
+var Item = require('../models/item');
 
 var async = require('async');
 
