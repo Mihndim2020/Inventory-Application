@@ -1,8 +1,20 @@
 var Item = require('../models/item');
 
 // Display list of all items.
-exports.item_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: Item list');
+exports.item_list = function(req, res, next) {
+    // Display list of all Books.
+exports.book_list = function(req, res, next) {
+
+    Item.find({}, 'name tradeMark')
+      .sort({name: 1})
+      .exec(function (err, list_items) {
+        if (err) { return next(err); }
+        //Successful, so render
+        res.render('item_list', { title: 'Item List', item_list: list_items });
+      });
+  
+  };
+  
 };
 
 // Display detail page for a specific item.
