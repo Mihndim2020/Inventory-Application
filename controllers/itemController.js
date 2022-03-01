@@ -2,8 +2,6 @@ var Item = require('../models/item');
 
 // Display list of all items.
 exports.item_list = function(req, res, next) {
-    // Display list of all Books.
-exports.book_list = function(req, res, next) {
 
     Item.find({}, 'name tradeMark')
       .sort({name: 1})
@@ -14,12 +12,24 @@ exports.book_list = function(req, res, next) {
       });
   
   };
-  
-};
 
 // Display detail page for a specific item.
 exports.item_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: Item detail: ' + req.params.id);
+    async.parallel({
+        item: function(callback) {
+            Item.findById(req.params.id)
+              .exec(callback)
+        }
+    }, function(err, results) {
+        if (err) { return next(err); } // Error in API usage.
+        if (results.item==null) { // No results.
+            var err = new Error('Item not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render.
+        res.render('item_detail', { title: 'Item Detail', item: results.item } );
+    });
 };
 
 // Display item create form on GET.
