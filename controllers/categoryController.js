@@ -46,6 +46,7 @@ exports.category_detail = function(req, res, next) {
         // Successful, so render.
         res.render('category_detail', { title: results.category.name, category: results.category } );
     });
+};
 
 // Display Category create form on GET.
 exports.category_create_get = function(req, res) {
