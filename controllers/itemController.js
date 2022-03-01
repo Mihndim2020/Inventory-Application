@@ -1,5 +1,7 @@
 var Item = require('../models/item');
 
+var async = require('async');
+
 // Display list of all items.
 exports.item_list = function(req, res, next) {
 
