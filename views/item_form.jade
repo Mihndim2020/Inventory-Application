@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='Name of the item' name='name' required='true' value=(undefined===item ? '' : item.name) )
+    div.form-group
+      label(for='tradeMark') TradeMark:
+      input#tradeMark.form-control(type='text', placeholder='TradeMark of the item' name='tradeMark' required='true' value=(undefined===item ? '' : item.tradeMark) )
+    div.form-group
+      label(for='category') Category:
+      input#category.form-control(type='select', placeholder='Select the category of the item' name='category' required='true' )
+      - categories.sort(function(a, b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+    for category in categories
+        if category
+          option(value=category._id selected=(category._id.toString()===item.category._id.toString() ? 'selected' : false) ) #{category.name}
+        else
+          option(value=category._id) #{category.name}
+    div.form-group
+      label(for='price') Price:
+      input#price.form-control(type='text', placeholder='Price of the item' name='name' required='true' value=(undefined===item ? '' : item.price) )
+    div.form-group
+      label(for='numberInStock') NumberInStock:
+      input#numberInStock.form-control(type='text', placeholder='Number of items' name='numberInStock' required='true' value=(undefined===item ? '' : item.numberInStock) )
+    div.form-group
+      label(for='speed') Speed:
+      input#speed.form-control(type='text', placeholder='Speed of the item' name='speed' value=(undefined===item ? '' : item.speed) )
+    div.form-group
+      label(for='capacity') Capacity:
+      input#capacity.form-control(type='text', placeholder='Capacity of the item' name='capacity' value=(undefined===item ? '' : item.capacity) )
+    div.form-group
+      label(for='dimension') Dimension:
+      input#dimension.form-control(type='text', placeholder='Dimension of the item' name='dimension' value=(undefined===item ? '' : item.dimension) )
+    label(for='imageUrl') ImageUrl:
+      input#imageUrl.form-control(type='text', placeholder='Image URL of the item' name='imageUrl' value=(undefined===item ? '' : item.imageUrl) )    
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
