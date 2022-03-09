@@ -14,14 +14,14 @@ block content
       label(for='category') Category:
       input#category.form-control(type='select', placeholder='Select the category of the item' name='category' required='true' )
       - categories.sort(function(a, b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
-    for category in categories
-        if category
-          option(value=category._id selected=(category._id.toString()===item.category._id.toString() ? 'selected' : false) ) #{category.name}
-        else
-          option(value=category._id) #{category.name}
+      for category in categories
+          if item
+            option(value=category._id selected=(category._id.toString()===item.category._id.toString() ? 'selected' : false) ) #{category.name}
+          else
+            option(value=category._id) #{category.name}
     div.form-group
       label(for='price') Price:
-      input#price.form-control(type='text', placeholder='Price of the item' name='name' required='true' value=(undefined===item ? '' : item.price) )
+      input#price.form-control(type='text', placeholder='Price of the item' name='price' required='true' value=(undefined===item ? '' : item.price) )
     div.form-group
       label(for='numberInStock') NumberInStock:
       input#numberInStock.form-control(type='text', placeholder='Number of items' name='numberInStock' required='true' value=(undefined===item ? '' : item.numberInStock) )
@@ -35,7 +35,10 @@ block content
       label(for='dimension') Dimension:
       input#dimension.form-control(type='text', placeholder='Dimension of the item' name='dimension' value=(undefined===item ? '' : item.dimension) )
     label(for='imageUrl') ImageUrl:
-      input#imageUrl.form-control(type='text', placeholder='Image URL of the item' name='imageUrl' value=(undefined===item ? '' : item.imageUrl) )    
+      input#imageUrl.form-control(type='text', placeholder='Image URL of the item' name='imageUrl' value=(undefined===item ? '' : item.imageUrl) )
+
+    div.form-group
+    button.btn.btn-primary(type='submit') Submit      
 
   if errors
     ul
